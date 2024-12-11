@@ -1,4 +1,7 @@
 Blue Window FED Assignment
+
+Check out the live demo [here](https://mpetrov99.github.io/Blue_Window_FED_Task.MPetrov99.github.io/).
+
 Project Overview
 
 This project implements a responsive web interface featuring a hamburger menu, rating widgets, and a visually engaging layout for showcasing different listings. The design is optimized for various screen sizes using media queries and modern CSS techniques.
