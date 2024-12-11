@@ -185,7 +185,7 @@ a {
                             .image {
                                 width: 31px;
                                 height: 31px;
-                                background-image: url('./assets/images/star-empty.png');
+                                background-image: url('../assets/images/star-empty.png');
                                 background-size: cover;
                                 background-position: center;
                                 transition: background-image 0.3s ease;
@@ -193,7 +193,7 @@ a {
         
                                 &.filled,
                                 &:hover {
-                                    background-image: url('./assets/images/star.png');
+                                    background-image: url('../assets/images/star.png');
                                 }
                             }
                             
