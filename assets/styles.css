@@ -1,0 +1,460 @@
+
+/* Global Styles */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Header */
+
+.nav {
+    position: relative;
+    background-color: #33acff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-left,
+    .logo-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+
+        img {
+            min-width: 100px;
+            height: 100px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #1c9ff9;
+            }
+        }
+    }
+
+    .hamburger {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    
+        &:hover {
+            background-color: #1c9ff9;
+        }
+    
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    
+        .items {
+            display: flex;
+            flex-direction: column;
+            background-color: #33acff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+            align-items: center;
+            gap: 20px;
+
+            &.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .item {
+                font-size: 20px;
+                color: #ffffff;
+                font-weight: 600;
+                cursor: pointer;
+                width: 120px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+    
+                &:hover {
+                    background-color: #1c9ff9;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .menu {
+        display: none;
+
+        .item {
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+            width: 120px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: #1c9ff9;
+            }
+        }
+    }
+}
+
+/* Body */
+
+.content {
+    background-color: #e8ebed;
+    flex: 1 0 75%;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 100%;
+        margin: 110px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .listing-widget {
+            padding: 16px;
+            box-shadow: 0 0 10px 5px #898989, 0 0 20px 15px #ffffff;
+
+            .widget-content {
+                .logo {
+                    width: auto;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+    
+                .perks {
+                    .rating {
+                        .title {
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 24px;
+                            text-decoration: underline;
+                            text-align: center;
+                            margin-bottom: 20px;
+                        }
+        
+                        .stars {
+                            margin-bottom: 20px;
+                            display: flex;
+                            gap: 5px;
+                            justify-content: center;
+        
+                            .image {
+                                width: 31px;
+                                height: 31px;
+                                background-image: url('/assets/images/star-empty.png');
+                                background-size: cover;
+                                background-position: center;
+                                transition: background-image 0.3s ease;
+                                cursor: pointer;
+        
+                                &.filled,
+                                &:hover {
+                                    background-image: url('/assets/images/star.png');
+                                }
+                            }
+                            
+                        }
+                    }
+        
+                    .benefits {
+                        text-align: center;
+                        margin-bottom: 20px;
+        
+                        .bonus {
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+        
+                        .bet,
+                        .get {
+                            font-weight: 400;
+                            font-size: 28px;
+                            line-height: 34px;
+                        }
+                    }
+                }
+            }
+
+            .button {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                color: #ffffff;
+                background-color: #009129;
+                padding: 20px;
+                text-align: center;
+                border-radius: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #1aaf44;
+                }
+            }
+
+            &:first-of-type .widget-content .logo {
+                background-color: #03252B;
+            }
+
+            &:nth-of-type(2) .widget-content .logo {
+                background-color: #43082F;
+            }
+
+            &:last-of-type .widget-content .logo {
+                background-color: #123156;
+            }
+        }
+    }
+}
+
+/* Footer */
+
+footer {
+    min-height: 250px;
+    background-color: #08090a;
+    display: flex;
+    justify-content: center;
+
+    .logo-left,
+    .logo-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        img {
+            cursor: pointer;
+
+            &:hover {
+                background-color: #0d0e0f
+            }
+        }
+    }
+
+    .logo-left img {
+        min-width: 100px;
+        height: 100px;
+    }
+
+    .logo-right img {
+        min-width: 100px;
+        height: 105px;
+    }
+}
+
+@media only screen and (min-width: 	576px) {
+    .content .container .listing-widget .widget-content .perks .benefits {
+        display: grid;
+        grid-template-areas: 
+            "bonus bonus"
+            "bet get";
+        grid-column-gap: 10px;
+        
+        .bonus {
+            grid-area: bonus;
+        }
+
+        .bet {
+            grid-area: bet;
+            justify-self: end;
+        }
+
+        .get {
+            grid-area: get;
+            justify-self: start;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .content .container {
+        margin: 110px 30px;
+
+        .widget-content {
+            display: flex;
+            margin-bottom: 25px;
+
+            .logo  {
+                margin-right: 30px;
+                min-width: 290px;
+                min-height: 160px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .perks {
+                .rating {
+                    .title {
+                        text-align: left !important;
+                    }
+
+                    .stars {
+                        justify-content: start !important;
+                        margin-bottom: 30px !important;
+                    }
+                }
+
+                .benefits .bonus {
+                    text-align: left;
+                }
+            }
+        }
+    }   
+}
+
+@media only screen and (min-width: 1024px) {
+    .nav {
+        .hamburger {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    .content .container {
+        justify-content: center;
+        max-width: 1128px;
+
+        .listing-widget {
+            display: flex;
+            align-items: center;
+
+            .widget-content {
+                width: 100%;
+                align-items: center;
+                margin-bottom: 0;
+
+                .logo  {
+                    min-width: 225px;
+                    max-height: 103px;
+                    min-height: unset;
+                    margin: 0 25px 0 0;
+                    
+
+                    img {
+                        height: 103px;
+                    }
+                }
+
+                .perks {
+                    display: flex;
+
+                    .rating {
+                        min-width: 210px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin-right: 20px;
+
+                        .stars {
+                            margin-bottom: 0 !important;
+                        }
+                    }
+
+                    .benefits {
+                        min-width: 149px;
+                        margin-bottom: 0;
+                        margin-right: 25px;
+                        grid-template-areas: 
+                            "bonus"
+                            "bet"
+                            "get";
+
+                        .bonus {
+                            text-align: center;
+                        }
+
+                        .bet,
+                        .get {
+                            justify-self: unset;
+                        }
+                    }
+                }
+            }
+
+            .button {
+                height: 64px;
+                width: 100%;
+                margin: 35px 35px 35px 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .content .container {
+        max-width: 1220px;
+
+        .listing-widget .widget-content {
+            .logo  {
+                min-width: 290px;
+                max-height: unset;
+                min-height: 133px;
+                margin: 0 60px 0 0;
+
+                img {
+                    width: 133px;
+                    height: 133px;
+                }
+            }
+
+            .perks {
+                .rating {
+                    margin-right: 60px;
+                }
+
+                .benefits {
+                    margin-right: 60px;
+                }
+            }
+        }
+    } 
+}
