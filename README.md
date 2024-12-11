@@ -1,6 +1,6 @@
 Blue Window FED Assignment
 
-Check out the live demo [here](https://mpetrov99.github.io/Blue_Window_FED_Task.MPetrov99.github.io/).
+Check out the live demo [here]((https://mpetrov99.github.io/Blue_Window_FED_task.MPetrov99.github.io/)).
 
 Project Overview
 
