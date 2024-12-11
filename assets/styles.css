@@ -285,6 +285,8 @@ footer {
     }
 }
 
+/* Media breakpoints */
+
 @media only screen and (min-width: 	576px) {
     .content .container .listing-widget .widget-content .perks .benefits {
         display: grid;
